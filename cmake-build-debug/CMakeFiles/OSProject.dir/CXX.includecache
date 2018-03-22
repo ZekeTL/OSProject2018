@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/coltonteefy/ClionProjects/OSProject/DMA.cpp
+DMA.h
+/Users/coltonteefy/ClionProjects/OSProject/DMA.h
+
+/Users/coltonteefy/ClionProjects/OSProject/DMA.h
+iostream
+-
+
+/Users/coltonteefy/ClionProjects/OSProject/PCB.cpp
+PCB.h
+/Users/coltonteefy/ClionProjects/OSProject/PCB.h
+
+/Users/coltonteefy/ClionProjects/OSProject/PCB.h
+string
+-
+iostream
+-
+utility
+-
+
+/Users/coltonteefy/ClionProjects/OSProject/cpu.cpp
+cpu.h
+/Users/coltonteefy/ClionProjects/OSProject/cpu.h
+
+/Users/coltonteefy/ClionProjects/OSProject/cpu.h
+iostream
+-
+vector
+-
+
+/Users/coltonteefy/ClionProjects/OSProject/main.cpp
+iostream
+-
+vector
+-
+cpu.h
+/Users/coltonteefy/ClionProjects/OSProject/cpu.h
+
