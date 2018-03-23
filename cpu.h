@@ -1,14 +1,13 @@
+//
+// Created by: 
+// colton teefy, noah holcombe, zeke lawal, chidi azuh, andrew sweitzer
+//
 #ifndef cpu_HEADER
 #define cpu_HEADER
 
 #include <iostream>
 #include <vector>
 
-/*
- * https://www.classes.cs.uchicago.edu/archive/2013/spring/12300-1/labs/lab6/
- * http://megalomaniacbore.blogspot.com/2012/05/write-your-own-virtual-cpu-in-c-code.html
- * http://www.c-jump.com/bcc/c155c/MemAccess/MemAccess.html#W12_0180_cc_memory_access_d
- * */
 
 namespace Emulation {
     using namespace std;
@@ -29,28 +28,26 @@ namespace Emulation {
             STORE1
         };
 
-    public:
-
-        byte register0{};
-        byte register1{};
+        byte reg0{};
+        byte reg1{};
         byte counter{};
         byte regInstruction{};
 
         bool currentStatus{};
-        bool overflow{};
-        bool underflow{};
+        bool isOverflow{};
+        bool isUnderflow{};
 
-        int currentTmp{};
+        int currentTmpValue{};
 
         cpu(const cpu &) {}
 
         void cpuReset() {
-            currentTmp = 0;
-            register0 = 0;
-            register1 = 0;
+            currentTmpValue = 0;
+            reg0 = 0;
+            reg1 = 0;
             currentStatus = true;
-            overflow = false;
-            underflow = false;
+            isOverflow = false;
+            isUnderflow = false;
             counter = 0;
         }
 
@@ -62,55 +59,53 @@ namespace Emulation {
 
         void registerRelease() {
             cout << "cpu Registers:" << endl
-                 << "Register0 [" << register0 << "]" << endl
-                 << "Register1 [" << register1 << "]" << endl
+                 << "reg0 [" << reg0 << "]" << endl
+                 << "reg1 [" << reg1 << "]" << endl
                  << "Status [" << currentStatus << "]" << endl
-                 << "Overflow [" << overflow << "]" << endl
-                 << "Underflow [" << underflow << "]" << endl
+                 << "isOverflow [" << isOverflow << "]" << endl
+                 << "isUnderflow [" << isUnderflow << "]" << endl
                  << "Program Counter [" << counter << "]" << endl
                  << "Instruction Register [" << regInstruction << "]" << endl
-                 << "Temp [" << currentTmp << "]" << endl;
+                 << "Temp Value [" << currentTmpValue << "]" << endl;
         }
 
         void load0(const vector<byte> &p_Program) {
-            register0 = p_Program[counter];
+            reg0 = p_Program[counter];
             counter++;
         }
 
         void load1(const vector<byte> &p_Program) {
-            register1 = p_Program[counter];
+            reg1 = p_Program[counter];
             counter++;
         }
 
         void add() {
-            currentTmp = register0 + register1;
-            if (currentTmp > MAX) {
-                overflow = true;
-                currentTmp = MAX;
+            currentTmpValue = reg0 + reg1;
+            if (currentTmpValue > MAX) {
+                isOverflow = true;
+                currentTmpValue = MAX;
             }
-            register0 = static_cast<byte>(currentTmp);
+            reg0 = static_cast<byte>(currentTmpValue);
         }
 
         void subtract() {
-            currentTmp = register0 - register1;
-            if (currentTmp < 0) {
-                underflow = true;
-                currentTmp = 0;
+            currentTmpValue = reg0 - reg1;
+            if (currentTmpValue < 0) {
+                isUnderflow = true;
+                currentTmpValue = 0;
             }
-            register0 = static_cast<byte>(currentTmp);
+            reg0 = static_cast<byte>(currentTmpValue);
         }
 
         void store0(vector<byte> &p_Program) {
-            p_Program[counter] = register0;
+            p_Program[counter] = reg0;
             counter++;
         }
 
         void store1(vector<byte> &p_Program) {
-            p_Program[counter] = register1;
+            p_Program[counter] = reg1;
             counter++;
         }
-
-    public:
 
         cpu() {
             cpuReset();
@@ -118,8 +113,8 @@ namespace Emulation {
 
         ~cpu() = default;
 
-        void
-        Execute(vector<byte> &p_Program, const bool &p_HaltOnOverflow = true, const bool &p_HaltOnUnderflow = true) {
+        void Execute(vector<byte> &p_Program, const bool &p_HaltOnisOverflow = true,
+                     const bool &p_HaltOnisUnderflow = true) {
             cpuReset();
 
             if (p_Program.size() > MAX) {
@@ -153,13 +148,13 @@ namespace Emulation {
                             return;
                     }
 
-                    if (overflow && p_HaltOnOverflow) {
-                        cout << "Overflow - Halt" << endl;
+                    if (isOverflow && p_HaltOnisOverflow) {
+                        cout << "isOverflow - Halt" << endl;
                         return;
                     }
 
-                    if (underflow && p_HaltOnUnderflow) {
-                        cout << "Underflow - Halt" << endl;
+                    if (isUnderflow && p_HaltOnisUnderflow) {
+                        cout << "isUnderflow - Halt" << endl;
                         return;
                     }
                 }

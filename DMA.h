@@ -1,5 +1,6 @@
 //
-// Created by colton teefy on 3/22/18.
+// Created by:
+// colton teefy, noah holcombe, zeke lawal, chidi azuh, andrew sweitzer
 //
 
 #ifndef OSPROJECT_DMA_H
@@ -32,6 +33,7 @@ public:
                     read(channel, physicalRAMAddress, startAddress);
                 case 1:
                     write(channel, physicalRAMAddress, startAddress);
+                default:break;
             }
         }
         io = io + 4;

@@ -1,5 +1,6 @@
 //
-// Created by colton teefy on 3/22/18.
+// Created by:
+// colton teefy, noah holcombe, zeke lawal, chidi azuh, andrew sweitzer
 //
 
 #ifndef OSPROJECT_PCB_H
@@ -12,150 +13,134 @@
 using namespace std;
 
 class PCB {
-    int process_ID;
-    int priority;
+    int ID;
+    int priorityLevel;
     int numOfCycles;
-    int process_start;
-    int process_end;
-    int data_start;
-    int data_end;
-    int size;
-    string change_status;
+    int processStartPoint;
+    int processEndPoint;
+    int dataStartPoint;
+    int dataEndPoint;
+    int currentSize;
+    string statusChange;
 
 public:
     PCB() {
-        process_ID = -1;
-        priority = 0;
+        ID = -1;
+        priorityLevel = 0;
         numOfCycles = -1;
-        size = 0;
-        process_start = 0;
-        process_end = 0;
-        data_start = 0;
-        data_end = 0;
-        change_status;
+        currentSize = 0;
+        processStartPoint = 0;
+        processEndPoint = 0;
+        dataStartPoint = 0;
+        dataEndPoint = 0;
+        statusChange = "";
     }
 
-public:
-    void setProcessID(int pid) {
-        process_ID = pid;
+
+    void setID(int pid) {
+        ID = pid;
     }
 
-public:
-    int getProcessID() {
-        return process_ID;
+
+    int getID() {
+        return ID;
     }
 
-public:
-    void setPriority(int pr) {
-        priority = pr;
+    void setPriorityLevel(int pr) {
+        priorityLevel = pr;
     }
 
-public:
-    int getPriority() {
-        return priority;
+    int getPriorityLevel() {
+        return priorityLevel;
     }
 
-public:
+
     void setNumOfCycles(int noc) {
         numOfCycles = noc;
     }
 
-public:
     int getNumOfCycles() {
         return numOfCycles;
     }
 
-public:
-    void setSize(int s) {
-        size = s;
+
+    void setcurrentSize(int s) {
+        currentSize = s;
     }
 
-public:
-    int getSize() {
-        return size;
+
+    int getcurrentSize() {
+        return currentSize;
     }
 
-public:
-    void setProcessStart(int ps) {
-        process_start = ps;
+    void setProcessStartPoint(int ps) {
+        processStartPoint = ps;
     }
 
-public:
-    int getProcessStart() {
-        return process_start;
+    int getProcessStartPoint() {
+        return processStartPoint;
     }
 
-public:
-    void setProcessEnd(int pe) {
-        process_end = pe;
+    void setProcessEndPoint(int pe) {
+        processEndPoint = pe;
     }
 
-public:
-    int getProcessEnd() {
-        return process_end;
+    int getProcessEndPoint() {
+        return processEndPoint;
     }
 
-public:
-    void setDataStart(int ds) {
-        data_start = ds;
+    void setDataStartPoint(int ds) {
+        dataStartPoint = ds;
     }
 
-public:
-    int getDataStart() {
-        return data_start;
+    int getDataStartPoint() {
+        return dataStartPoint;
     }
 
-public:
-    void setDataEnd(int de) {
-        data_end = de;
+    void setDataEndPoint(int de) {
+        dataEndPoint = de;
     }
 
-public:
-    int getDataEnd() {
-        return data_end;
+    int getDataEndPoint() {
+        return dataEndPoint;
     }
 
-public:
     string getChangeStatus() {
-        return change_status;
+        return statusChange;
     }
 
-public:
     void setChangeStatus(string status) {
-        change_status = std::move(status);
+        statusChange = std::move(status);
     }
 
-public:
-    void incrementNumOfCycle() {
+    void cycleAdd() {
         numOfCycles++;
     }
 
-public:
-    void changeStatus(string newState) {
-        transform(newState.begin(), newState.end(), newState.begin(), ::tolower);
-        if (newState.compare("running"))
-            change_status = newState;
-        else if (newState.compare("ready"))
-            change_status = newState;
-        else if (newState.compare("waiting"))
-            change_status = newState;
-        else if (newState.compare("exited"))
-            change_status = newState;
+    void changeStatus(string change) {
+        transform(change.begin(), change.end(), change.begin(), ::tolower);
+        if (change.compare == "running")
+            statusChange = change;
+        else if (change.compare == "ready")
+            statusChange = change;
+        else if (change.compare == "waiting")
+            statusChange = change;
+        else if (change.compare == "exited")
+            statusChange = change;
         else
-            cout << "ERROR bitch: " + newState + " is not a valid state";
+            cout << "Error! " + change + " is not a valid state";
     }
 
-public:
-    string tostring() {
-        cout << "process ID: " + process_ID << endl
-             << "priority:" + priority << endl
-             << "number of cycles:" + numOfCycles << endl
-             << "size:" + size << endl
-             << "process start:" + process_start << endl
-             << "process end" + process_end << endl
-             << "data start:" + data_start << endl
-             << "data end:" + data_end << endl
-             << "change status: " + change_status << endl;
+    void tostring() {
+        cout << "process ID: " + ID << endl
+             << "priorityLevel:" + priorityLevel << endl
+             << "cycles:" + numOfCycles << endl
+             << "currentSize:" + currentSize << endl
+             << "process start:" + processStartPoint << endl
+             << "process end" + processEndPoint << endl
+             << "data start:" + dataStartPoint << endl
+             << "data end:" + dataEndPoint << endl
+             << "change status: " + statusChange << endl;
     }
 };
 
