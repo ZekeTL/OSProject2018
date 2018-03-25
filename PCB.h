@@ -119,13 +119,13 @@ public:
 
     void changeStatus(string change) {
         transform(change.begin(), change.end(), change.begin(), ::tolower);
-        if (change.compare == "running")
+        if (change == "running")
             statusChange = change;
-        else if (change.compare == "ready")
+        else if (change == "ready")
             statusChange = change;
-        else if (change.compare == "waiting")
+        else if (change == "waiting")
             statusChange = change;
-        else if (change.compare == "exited")
+        else if (change == "exited")
             statusChange = change;
         else
             cout << "Error! " + change + " is not a valid state";

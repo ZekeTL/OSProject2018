@@ -9,7 +9,7 @@
 #include <vector>
 
 
-namespace Emulation {
+namespace Simulation {
     using namespace std;
 
     typedef unsigned char byte;

@@ -8,7 +8,7 @@
 #include "cpu.h"
 
 using namespace std;
-using namespace Emulation;
+using namespace Simulation;
 
 int main() {
     cpu *cpu = new class cpu();
@@ -21,8 +21,6 @@ int main() {
     inst.push_back(cpu::ADD);
     inst.push_back(cpu::STORE0);
     inst.push_back(255);
-
-    cout << inst.size() << endl;
 
     cout << "cpu & Instructions Ready" << endl;
     cpu->Execute(inst);
