@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 
 namespace Simulation {
@@ -113,8 +114,8 @@ namespace Simulation {
 
         ~cpu() = default;
 
-        void Execute(vector<byte> &p_Program, const bool &p_HaltOnisOverflow = true,
-                     const bool &p_HaltOnisUnderflow = true) {
+        void Execute(vector<byte> &p_Program, const bool &p_HaltOnIsOverflow = true,
+                     const bool &p_HaltOnIsUnderflow = true) {
             cpuReset();
 
             if (p_Program.size() > MAX) {
@@ -148,12 +149,12 @@ namespace Simulation {
                             return;
                     }
 
-                    if (isOverflow && p_HaltOnisOverflow) {
+                    if (isOverflow && p_HaltOnIsOverflow) {
                         cout << "isOverflow - Halt" << endl;
                         return;
                     }
 
-                    if (isUnderflow && p_HaltOnisUnderflow) {
+                    if (isUnderflow && p_HaltOnIsUnderflow) {
                         cout << "isUnderflow - Halt" << endl;
                         return;
                     }
@@ -162,7 +163,6 @@ namespace Simulation {
         }
 
     };
-
 }
 
 #endif

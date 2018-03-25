@@ -13,7 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f2d2752e-feb0-4de2-b1c7-5f23e815d9c5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/PCB.h" afterPath="$PROJECT_DIR$/PCB.h" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/DMA.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/DMA.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/PCB.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/PCB.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/cpu.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/cpu.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSProject.dir/main.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OSProject" afterPath="$PROJECT_DIR$/cmake-build-debug/OSProject" />
       <change beforePath="$PROJECT_DIR$/cpu.h" afterPath="$PROJECT_DIR$/cpu.h" />
       <change beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
@@ -31,8 +35,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            <state relative-caret-position="240">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="e#94#113#0" expanded="true" />
               </folding>
@@ -43,8 +47,8 @@
       <file leaf-file-name="cpu.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpu.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            <state relative-caret-position="715">
+              <caret line="151" column="56" lean-forward="false" selection-start-line="151" selection-start-column="56" selection-end-line="151" selection-end-column="56" />
               <folding>
                 <element signature="e#133#152#0" expanded="true" />
               </folding>
@@ -55,8 +59,8 @@
       <file leaf-file-name="PCB.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PCB.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+            <state relative-caret-position="-894">
+              <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding>
                 <element signature="e#143#160#0" expanded="true" />
               </folding>
@@ -87,7 +91,6 @@
       <find>p_HaltOnOverflow</find>
       <find>Emulator</find>
       <find>public</find>
-      <find>String</find>
       <find>&gt;&gt;</find>
       <find>newState</find>
       <find>getProcessID</find>
@@ -95,6 +98,10 @@
       <find>getpriorityLevel</find>
       <find>currentTmp</find>
       <find>LOAD0</find>
+      <find>cout &gt;&gt;</find>
+      <find>boolean</find>
+      <find>String</find>
+      <find>p_HaltOnisOverflow</find>
     </findStrings>
     <replaceStrings>
       <replace>cpu</replace>
@@ -105,13 +112,16 @@
       <replace>counter</replace>
       <replace>Emulation</replace>
       <replace>public:</replace>
-      <replace>string</replace>
       <replace>&lt;&lt;</replace>
       <replace>stateChange</replace>
       <replace>getID</replace>
       <replace>priorityLevel</replace>
       <replace>getPriorityLevel</replace>
       <replace>currentTmpValue</replace>
+      <replace>cout &lt;&lt;</replace>
+      <replace>bool</replace>
+      <replace>string</replace>
+      <replace>p_HaltOnIsOverflow</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -121,8 +131,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DMA.h" />
-        <option value="$PROJECT_DIR$/cpu.h" />
         <option value="$PROJECT_DIR$/PCB.h" />
+        <option value="$PROJECT_DIR$/cpu.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -212,7 +222,7 @@
       <option name="presentableId" value="Default" />
       <updated>1521739141380</updated>
       <workItem from="1521739143996" duration="9049000" />
-      <workItem from="1521815387676" duration="3228000" />
+      <workItem from="1521815387676" duration="5559000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <created>1521825263461</created>
@@ -221,11 +231,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521825263461</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="latest">
+      <created>1522001211165</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1522001211165</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12277000" />
+    <option name="totallyTimeSpent" value="14608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="28" y="23" width="1338" height="741" extended-state="0" />
@@ -239,7 +256,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22311397" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -259,7 +276,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
+    <MESSAGE value="latest" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -343,30 +361,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpu.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding>
-            <element signature="e#133#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PCB.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+        <state relative-caret-position="-894">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
           <folding>
             <element signature="e#143#160#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cpu.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="151" column="56" lean-forward="false" selection-start-line="151" selection-start-column="56" selection-end-line="151" selection-end-column="56" />
+          <folding>
+            <element signature="e#133#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <element signature="e#94#113#0" expanded="true" />
           </folding>
