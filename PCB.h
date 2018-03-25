@@ -9,36 +9,64 @@
 #include <string>
 #include <iostream>
 #include <utility>
+#include <vector>
 
 using namespace std;
 
 class PCB {
+
     int ID;
-    int priorityLevel;
-    int numOfCycles;
-    int processStartPoint;
-    int processEndPoint;
     int dataStartPoint;
     int dataEndPoint;
+    int processStartPoint;
+    int processEndPoint;
+    int priorityLevel;
+    int numOfCycles;
     int currentSize;
     string statusChange;
+
+
+    //not ready yet
+    
+    int taskDiskAddress;
+    int taskMemoryAddress;
+    int taskInstructionCount;
+    int dataDiskAddress;
+    int dataMemoryAddress;
+    int pageTableStartingIndex;
+    int pagesNeeded;
+    int inputBuffer;
+    int outputBuffer;
+    int tempBuffer;
+    int cacheSize;
+    int programCounter;
+    bool IObound;
+    bool taskInMemory;
+    bool hasTaskRun;
+
+    string instruction;
+
+    vector<int> allocatedVirtualPages;
+    vector<string> cache;
+
+    int registers[16] = {};
 
 public:
     PCB() {
         ID = -1;
+        dataStartPoint = 0;
+        dataEndPoint = 0;
+        processStartPoint = 0;
+        processEndPoint = 0;
         priorityLevel = 0;
         numOfCycles = -1;
         currentSize = 0;
-        processStartPoint = 0;
-        processEndPoint = 0;
-        dataStartPoint = 0;
-        dataEndPoint = 0;
-        statusChange = "";
+        statusChange = "new";
     }
 
 
-    void setID(int pid) {
-        ID = pid;
+    void setID(int processId) {
+        ID = processId;
     }
 
 
@@ -46,8 +74,8 @@ public:
         return ID;
     }
 
-    void setPriorityLevel(int pr) {
-        priorityLevel = pr;
+    void setPriorityLevel(int pLevel) {
+        priorityLevel = pLevel;
     }
 
     int getPriorityLevel() {
@@ -55,8 +83,8 @@ public:
     }
 
 
-    void setNumOfCycles(int noc) {
-        numOfCycles = noc;
+    void setNumOfCycles(int numCycle) {
+        numOfCycles = numCycle;
     }
 
     int getNumOfCycles() {
@@ -64,8 +92,8 @@ public:
     }
 
 
-    void setcurrentSize(int s) {
-        currentSize = s;
+    void setcurrentSize(int size) {
+        currentSize = size;
     }
 
 
@@ -73,32 +101,32 @@ public:
         return currentSize;
     }
 
-    void setProcessStartPoint(int ps) {
-        processStartPoint = ps;
+    void setProcessStartPoint(int procStart) {
+        processStartPoint = procStart;
     }
 
     int getProcessStartPoint() {
         return processStartPoint;
     }
 
-    void setProcessEndPoint(int pe) {
-        processEndPoint = pe;
+    void setProcessEndPoint(int procEnd) {
+        processEndPoint = procEnd;
     }
 
     int getProcessEndPoint() {
         return processEndPoint;
     }
 
-    void setDataStartPoint(int ds) {
-        dataStartPoint = ds;
+    void setDataStartPoint(int dataStart) {
+        dataStartPoint = dataStart;
     }
 
     int getDataStartPoint() {
         return dataStartPoint;
     }
 
-    void setDataEndPoint(int de) {
-        dataEndPoint = de;
+    void setDataEndPoint(int dataEnd) {
+        dataEndPoint = dataEnd;
     }
 
     int getDataEndPoint() {
@@ -119,28 +147,28 @@ public:
 
     void changeStatus(string change) {
         transform(change.begin(), change.end(), change.begin(), ::tolower);
-        if (change == "running")
+        if (change == "new")
             statusChange = change;
         else if (change == "ready")
             statusChange = change;
         else if (change == "waiting")
             statusChange = change;
-        else if (change == "exited")
+        else if (change == "terminate")
             statusChange = change;
         else
             cout << "Error! " + change + " is not a valid state";
     }
 
     void tostring() {
-        cout << "process ID: " + ID << endl
-             << "priorityLevel:" + priorityLevel << endl
-             << "cycles:" + numOfCycles << endl
-             << "currentSize:" + currentSize << endl
-             << "process start:" + processStartPoint << endl
-             << "process end" + processEndPoint << endl
-             << "data start:" + dataStartPoint << endl
-             << "data end:" + dataEndPoint << endl
-             << "change status: " + statusChange << endl;
+        cout << "process ID: " << ID << endl
+             << "priority level:" << priorityLevel << endl
+             << "cycles:" << numOfCycles << endl
+             << "current size:" << currentSize << endl
+             << "process start:" << processStartPoint << endl
+             << "process end" << processEndPoint << endl
+             << "data start:" << dataStartPoint << endl
+             << "data end:" << dataEndPoint << endl
+             << "current status: " << statusChange << endl;
     }
 };
 
